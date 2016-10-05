@@ -4,6 +4,10 @@
   "idInjection": true,
   "options": {
     "validateUpsert": true
+  },  
+  "mysql":{
+    "schema":"loopback_tasks",
+    "table":"Task"
   },
   "properties": {
     "task": {
