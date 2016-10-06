@@ -8,6 +8,11 @@
     "schema":"loopback_tasks",
     "table":"Owner"
   },
+  "setting":{
+    "mongo": {
+      "allowExtendedOperators" : true
+    }
+  },
   "properties": {
   },
   "validations": [],
@@ -15,45 +20,9 @@
     "tasks": {
       "type": "hasMany",
       "model": "Task",
-      "foreignKey": "ownerId",
-      "options":{
-        "disableInclude": true
-      }
+      "foreignKey": "ownerId"
     }
   },
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "ALLOW",
-      "property": "post"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "ALLOW",
-      "property": "login"
-    },
-    {
-      "accessType": "READ",
-      "principalType": "ROLE",
-      "principalId": "$authenticated",
-      "permission": "ALLOW"
-    },
-    {
-      "accessType": "WRITE",
-      "principalType": "ROLE",
-      "principalId": "$owner",
-      "permission": "ALLOW"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }
